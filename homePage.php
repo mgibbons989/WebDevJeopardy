@@ -24,7 +24,7 @@
 
         <div class = "cards">
             <div class = "topic">
-                <a href = ""><span class = "words">Disney</span></a>
+                <a href = "disney.html"><span class = "words">Disney</span></a>
             </div>
 
             <div class = "topic">
