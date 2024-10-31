@@ -75,3 +75,57 @@ input[type = "submit"]{
     text-align: center;
     padding-bottom: 10px;
 }
+
+.red{
+    color: red;
+}
+
+.topic{
+    background-color: #D9D9D9;
+    flex-basis: 32%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 2px solid red; */
+}
+
+.center{
+    margin-top: 6em;
+    /* border: 2px solid blue; */
+    height: 80%;
+}
+
+.cards{
+    display: flex;
+    margin: auto;
+    width: 80%;
+    height: 51%;
+    justify-content: space-between;
+    padding-top: 1em;
+    /* border: 2px solid black; */
+}
+
+.words{
+    font-size: 30pt;
+}
+
+.topic a{
+    color: black;
+}
+
+.logout{
+    background-color: #7CCDFF;
+    border-radius: 9px;
+    font-size: 70%;
+    cursor: pointer;
+    font-size: 18pt;
+    padding: 3pt;
+    text-decoration: none;
+    color: black;
+}
+
+.bot{
+    margin-top: 3em;
+    text-align: center;
+    padding-bottom: 30px;
+}
