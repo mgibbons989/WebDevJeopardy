@@ -2,6 +2,10 @@
     font-family: 'Bebas';
     src: url('fonts/BebasNeue-Regular.ttf');
 }
+@font-face {
+    font-family: 'ITC';
+    src: url('fonts/ITC/Korinna/Bold.otf');
+}
 
 body,html{
     padding: 0;
@@ -9,15 +13,13 @@ body,html{
     background-color: #060CE9;
     height: 100%;
     width: 100%;
-    font-family: 'Bebas', sans-serif;
 }
 
 .mygrid{
+    font-family: 'Bebas', sans-serif;
     display: grid;
     grid-template-columns: repeat(5, 20%);
     grid-template-rows:  repeat(5, 20%);
-    
-    /* gap: 10px; */
     /* border: 5px solid black; */
     height: 100%;
 }
@@ -41,4 +43,11 @@ body,html{
     align-items: center;
     border: 3px solid black;
     text-shadow: 4px 5px 2px black;
+}
+.money a{
+    color: #dab522;
+    text-decoration: none;
+}
+.money a:hover{
+    text-decoration: underline;
 }

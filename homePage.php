@@ -36,9 +36,9 @@
             </div>
         </div>
 
-        <div class = "bot">
-            <a href = "loginPage.html" class = "logout">Logout</span></a>
-        </div>
+        <form action = "loginOutPageSubmit.php" method = 'get'>
+            <br><br><input type = "submit" name = "loginBut" value = "LogOut">
+        </form>
 
     </div>
 

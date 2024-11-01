@@ -17,7 +17,7 @@
 
         <div class = "reg"><span class = "red">*</span> indicates required field</div>
 
-        <form>
+        <form action = "registrationPageSubmit.php" method="post">
             <div class = "info">
                 <label for = "first"> First Name <span class = "red">*</span>
                 <input type = "text" id = "first" name = "fname"></label><br><br>
@@ -36,6 +36,8 @@
     
                 <label for = "email"> Email
                 <input type = "text" id = "email" name = "email"></label><br><br>
+                
+                <input type = "submit" name = "registerBut" value = "Register">
             </div>
         </form>
         <div class = "reg">Already have an account? <a href = "loginPage.html">Login.</a></div>
