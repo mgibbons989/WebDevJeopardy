@@ -4,13 +4,13 @@
 }
 @font-face {
     font-family: 'ITC';
-    src: url('fonts/ITC/Korinna/Bold.otf');
+    src: url('fonts/ITC_\ Korinna\ Normal.ttf');
 }
 
 body,html{
     padding: 0;
     margin: 0;
-    background-color: #060CE9;
+    background-color: #060b94;
     height: 100%;
     width: 100%;
 }

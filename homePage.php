@@ -37,7 +37,7 @@
         </div>
 
         <form action = "loginOutPageSubmit.php" method = 'get'>
-            <br><br><input type = "submit" name = "loginBut" value = "LogOut">
+            <br><br><input type = "submit" name = "loginBut" value = "Log Out">
         </form>
 
     </div>
