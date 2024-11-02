@@ -15,8 +15,9 @@
         </div>
 
         <div class = "answer">
-            
-            <form>
+
+            <form action = "answer.php" method = "post">
+                
                 <label for = "myques">
                     Type your answer below:<br>
                     <input type = "text" name = "answer" id = "myques">

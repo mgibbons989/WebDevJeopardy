@@ -13,12 +13,22 @@
 
     <div class = "instructions">
 
+        <div class = "content">
+            <div class = "hello">
+                <span class = "dir">How to Play</span>
+            </div>
+            <p>Welcome to our Jeopardy Game!</p>
+            <p>This is an online version of the classic Jeopardy game. To begin,
+                please choose a topic after closing this window.
+            </p>
+            <p>Afterwards, you'll be taken to a page </p>
+        </div>
 
     </div>
     
     <div class = "center">
         <div class = "welcome">
-            <p>Welcome to Web Jeopardy <!--<php $_POST['username'] -->!</p>
+            <p>Welcome to Web Jeopardy {NAME HERE}<!--<php $_POST['username'] -->!</p>
             <p>Please select a topic below:</p>
         </div>
 

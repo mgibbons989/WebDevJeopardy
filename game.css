@@ -33,6 +33,16 @@ body,html{
     margin-top: 2em;
 
 }
+.response{
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    font-size: 4em;
+    text-shadow: 4px 5px 2px black;
+
+    display: flex;
+    text-align: center;
+}
 
 .answer{
     flex:1
@@ -65,6 +75,11 @@ input[type = "submit"]:hover{
     background-color: #d8d8d8;
 }
 
+.bottom{
+    display: flex;
+    border: 2px solid black;
+}
+
 .score{
     margin: auto;
     color:black;
@@ -85,4 +100,22 @@ input[type = "submit"]:hover{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.back{
+    padding-bottom: 15px;
+}
+
+.back a{
+    /* border: 2px solid black; */
+    color:white;
+    margin: auto;
+    font-size: 20pt;
+    text-shadow: 4px 5px 2px black;
+    text-decoration: none;
+}
+
+.back a:hover{
+    text-shadow: none;
+    text-decoration: underline;
 }
