@@ -16,12 +16,19 @@
         <div class = "content">
             <div class = "hello">
                 <span class = "dir">How to Play</span>
+                <label><input type = "checkbox"><span class = "closebut"> &times; </span></label>
             </div>
             <p>Welcome to our Jeopardy Game!</p>
-            <p>This is an online version of the classic Jeopardy game. To begin,
+            <p>This is an online version of classic Jeopardy! To begin,
                 please choose a topic after closing this window.
             </p>
-            <p>Afterwards, you'll be taken to a page </p>
+            <p>Afterwards, you'll be taken to a page with a grid of categories and your choice of money value :).
+                Once you click on a value, it'll take you to a question page where you'll type in your answer and
+                press submit.
+            </p>
+            <p>If you got it right you'll get the amount you clicked added to your score! If not, you won't
+                and you can go back to the categories pages to click another value!
+            </p>
         </div>
 
     </div>
