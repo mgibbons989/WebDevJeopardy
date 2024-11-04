@@ -1,3 +1,18 @@
+<?php 
+//check the session to see if user logged in
+session_start();
+//if the user has already played a bit, the score doesn't change
+//if they are new to the game, the score is set to 0 and the cookie is set to 
+//keep track across pages
+if(!isset($_COOKIE['score'])){
+    $score = 0;
+    setcookie('score', 0, time() + 3600 * 24);
+}
+else{
+    $score = $_COOKIE['score'];
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,6 +29,9 @@
         <div class = "category">STAR WARS</div>
         <div class = "category">GENERAL<br> KNOWLEDGE</div>
 
+        <!-- Each of these is a link sent to the question.php page with a different
+         category and value according to which row and column the user clicks on -->
+         
         <div class = "money"><a href = "question.php?cat=1&val=200">$200</a></div>
         <div class = "money"><a href = "question.php?cat=2&val=200">$200</a></div>
         <div class = "money"><a href = "question.php?cat=3&val=200">$200</a></div>

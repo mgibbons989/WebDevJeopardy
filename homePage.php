@@ -1,3 +1,8 @@
+<?php include 'myfunctions.php';
+//check the session to see if user logged in
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,7 +29,7 @@
             </p>
             <p>Afterwards, you'll be taken to a page with a grid of categories and your choice of money value :).
                 Once you click on a value, it'll take you to a question page where you'll type in your answer and
-                press submit.
+                press submit. The questions vary with simple question and answers, fill in the blanks, and true or false.
             </p>
             <p>If you got it right you'll get the amount you clicked added to your score! If not, you won't
                 and you can go back to the categories pages to click another value!

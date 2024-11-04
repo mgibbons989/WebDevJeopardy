@@ -1,3 +1,8 @@
+<?php include 'myfunctions.php';
+//check the session to see if user logged in
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

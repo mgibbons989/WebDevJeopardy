@@ -60,6 +60,7 @@ input[type = "text"]{
     font-size: 75%;
     text-align: center;
     background-color: #e2e2e2;
+    font-family: 'ITC', sans-serif;
 }
 
 input[type = "submit"]{
@@ -69,6 +70,9 @@ input[type = "submit"]{
     width: 5%;
     text-align: center;
     cursor: pointer;
+    font-family: 'ITC', sans-serif;
+    font-weight: bold;
+
 }
 
 input[type = "submit"]:hover{
@@ -95,6 +99,7 @@ input[type = "submit"]:hover{
 }
 
 .scnum{
+    font-family: 'ITC', sans-serif;
     font-size: 2em;
     flex: 1;
     display: flex;
