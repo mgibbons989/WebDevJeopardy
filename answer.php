@@ -20,10 +20,10 @@ include 'myfunctions.php';
                 $score = $_COOKIE['score']; //set score
                 $score +=  $_POST['val']; //update score
                 setcookie('score', $score, time() + 3600 * 24); //update cookie
-                echo 'CORRECT! THE ANSWER WAS: <br>' . htmlspecialchars($_POST['correctanswer']) . "<br>LET'S KEEP IT GOING!"; //print correct message
+                echo 'CORRECT! THE ANSWER WAS: <br>' . htmlspecialchars(ucwords($_POST['correctanswer'])) . "<br>LET'S KEEP IT GOING!"; //print correct message
             }
             else{
-                echo 'SORRY! THE ANSWER WAS: <br>' . htmlspecialchars($_POST['correctanswer']) . "<br> NO MONEY FOR YOU!"; //print incorrect message
+                echo 'SORRY! THE ANSWER WAS: <br>' . htmlspecialchars(ucwords($_POST['correctanswer'])) . "<br> NO MONEY FOR YOU!"; //print incorrect message
             }
             ?>
         </div>
@@ -33,7 +33,7 @@ include 'myfunctions.php';
 
         <div class = "score">
             <div class = "sc">Your Score</div>
-            <div class = "scnum">$<?= isset($_COOKIE['score']) ? $_COOKIE['score'] : 0;?></div>
+            <div class = "scnum">$<?= htmlspecialchars($score);?></div>
             <!-- Displays the score if its set and if not, then it displays zero-->
         </div>
         

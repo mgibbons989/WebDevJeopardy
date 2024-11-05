@@ -1,6 +1,9 @@
 <?php include 'myfunctions.php';
 //check the session to see if user logged in
 session_start();
+if(isset($_COOKIE['score'])){
+    $_COOKIE['score'] = 0;
+}
 ?>
 
 <!DOCTYPE html>
