@@ -1,6 +1,33 @@
 <?php include 'myfunctions.php';
 //check the session to see if user logged in
-session_start();
+
+if(isset($_POST['loginBut'])){
+    $users = file('usernames.txt');
+    $username = isset($_POST['username']) ? $_POST['username'] : '';
+    $password = isset($_POST['password']) ? $_POST['password'] : '';
+    $looking = $username . ',';
+
+    foreach($users as $user){
+        if(preg_match("/\b$looking\b/",$user)){
+            $allinfo = explode(',', $user);
+            break;
+        }
+    }
+
+    if(!isset($allinfo)){
+        $failed = "<span style='color:red'>Username Not Found. Please Register First!</span>";
+    }
+    else if($password == trim($allinfo[3])){
+        echo "madeit";
+        session_start();
+        $_SESSION['userdata']['Username'] = $username;
+        header("location:homePage.php");
+        exit();
+    }
+    else{
+        $failed = "<span style='color:red'>Invalid login details. Please Register!</span>";
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +50,9 @@ session_start();
         </div>
 
         <div class = "info">
-            <form action = "loginOutPageSubmit.php" method = "post">
+            <div class = "failed"><?php if(isset($failed)){echo $failed;}?></div>
+        
+            <form action = "" method = "post">
                 <label for = "username">Username<br>
                 <input type = "text" id = "username" name = "username"></label><br><br>
 
@@ -34,7 +63,7 @@ session_start();
                 <input type = "submit" name = "loginBut" value = "Login">
             </form>
         </div>
-            <div class = "reg">Need to create an account? <a href = "registrationPage.html">Register.</a></div>
+            <div class = "reg">Need to create an account? <a href = "registrationPage.php">Register.</a></div>
         
     </div>
 </body>

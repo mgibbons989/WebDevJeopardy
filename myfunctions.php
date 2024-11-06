@@ -49,4 +49,36 @@ function checkAnswer($user, $correct){
     }
 }
 
+function validate($post){
+    if(empty($post['fname']) || empty($post['lname']) 
+        || empty($post['uname']) || empty('pass')){
+            return 'empty';
+        }
+
+    if(!empty($post['phonenum'])){
+        if(!preg_match('/^[1-9]\d{9}$/', $post['phonenum'])){
+            return "number";
+        }
+    }
+
+    if(!empty($post['email'])){
+        if(!preg_match('/^\S+@\S+\.\S+$/', $post['email'])){
+            return 'email';
+        }
+    }
+    
+}
+
+function alreadyin($post){
+    $users = file('usernames.txt');
+    $username = isset($post['uname']) ? $post['uname'] : '' . ',';
+
+    foreach($users as $user){
+        if(preg_match("/\b$username\b/",$user)){
+            echo($user . " " . $username);
+            return false;
+        }
+    }
+    return true;
+}
 ?>

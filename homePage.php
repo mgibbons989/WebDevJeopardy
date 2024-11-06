@@ -4,6 +4,12 @@ session_start();
 if(isset($_COOKIE['score'])){
     $_COOKIE['score'] = 0;
 }
+if(isset($_POST['logoutBut'])){
+    session_unset();
+    session_destroy();
+    header("location:loginPage.php");
+    exit();
+}
 ?>
 
 <!DOCTYPE html>
@@ -43,13 +49,13 @@ if(isset($_COOKIE['score'])){
     
     <div class = "center">
         <div class = "welcome">
-            <p>Welcome to Web Jeopardy {NAME HERE}<!--<php $_POST['username'] -->!</p>
+            <p>Welcome to Web Jeopardy <?= $_SESSION['userdata']['Username']?>!</p>
             <p>Please select a topic below:</p>
         </div>
 
         <div class = "cards">
             <div class = "topic">
-                <a href = "disney.html"><span class = "words">Disney</span></a>
+                <a href = "disney.php"><span class = "words">Disney</span></a>
             </div>
 
             <div class = "topic">
@@ -61,8 +67,8 @@ if(isset($_COOKIE['score'])){
             </div>
         </div>
 
-        <form action = "loginOutPageSubmit.php" method = 'get'>
-            <br><br><input type = "submit" name = "loginBut" value = "Log Out">
+        <form action = "logOutPage.php" method = 'post'>
+            <br><br><input type = "submit" name = "logoutBut" value = "Log Out">
         </form>
 
     </div>
