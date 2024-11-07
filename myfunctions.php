@@ -1,7 +1,7 @@
 <?php
 //check the session to see if user logged in
 
-function getQA($cat,$val){
+function getQAdisney($cat,$val){
     //this is an array of the questions and matching answer based on the category and value
     $questions = [
         //marvel movies
@@ -38,7 +38,79 @@ function getQA($cat,$val){
 
     return [$question, $answer]; //return the match
 }
+function getQA($cat,$val){
+    $questions = [
+        //marvel movies
+        '1_200' =>['question' => 'myquestion', 'answer' => 'myanswer'],
+        '1_400' =>['question' => "myquestion", 'answer' => 'myanswer'],
+        '1_600' =>['question' => "myquestion", 'answer' => 'myanswer'],
+        '1_800' =>['question' => "myquestion", 'answer' => 'myanswer'], 
+        //animated films
+        '2_200' =>['question' => 'myquestion', 'answer' => 'myanswer'], 
+        '2_400' =>['question' => 'myquestion', 'answer' => 'myanswer'], 
+        '2_600' =>['question' => 'myquestion', 'answer' => 'myanswer'],
+        '2_800' =>['question' => 'myquestion', 'answer' => 'myanswer'], 
+        //20th century
+        '3_200' =>['question' => 'myquestion', 'answer' => 'myanswer'], 
+        '3_400' =>['question' => "myquestion", 'answer' => 'myanswer'], 
+        '3_600' =>['question' => "myquestion", 'answer' => 'myanswer'], 
+        '3_800' =>['question' => "myquestion", 'answer' => 'myanswer'], 
+        //star wars
+        '4_200' =>['question' => 'myquestion', 'answer' => 'myanswer'], 
+        '4_400' =>['question' => 'myquestion', 'answer' => 'myanswer'], 
+        '4_600' =>['question' => "myquestion", 'answer' => 'myanswer'], 
+        '4_800' =>['question' => 'myquestion', 'answer' => 'myanswer'], 
+        //general knowledge
+        '5_200' =>['question' => 'myquestion', 'answer' => 'myanswer'], 
+        '5_400' =>['question' => 'myquestion', 'answer' => 'myanswer'], 
+        '5_600' =>['question' => 'myquestion', 'answer' => 'myanswer'], 
+        '5_800' =>['question' => 'myquestion', 'answer' => 'myanswer'], 
+    ];
 
+    $qua = $cat . '_' . $val; //this creates cat_val to find the entry in the questions array
+
+    $question = $questions[$qua]['question'];
+    $answer = $questions[$qua]['answer'];
+
+    return [$question, $answer]; //return the match
+}
+
+function getQA1($cat,$val){
+    $questions = [
+        //marvel movies
+        '1_200' =>['question' => 'myquestion', 'answer' => 'myanswer'],
+        '1_400' =>['question' => "myquestion", 'answer' => 'myanswer'],
+        '1_600' =>['question' => "myquestion", 'answer' => 'myanswer'],
+        '1_800' =>['question' => "myquestion", 'answer' => 'myanswer'], 
+        //animated films
+        '2_200' =>['question' => 'myquestion', 'answer' => 'myanswer'], 
+        '2_400' =>['question' => 'myquestion', 'answer' => 'myanswer'], 
+        '2_600' =>['question' => 'myquestion', 'answer' => 'myanswer'],
+        '2_800' =>['question' => 'myquestion', 'answer' => 'myanswer'], 
+        //20th century
+        '3_200' =>['question' => 'myquestion', 'answer' => 'myanswer'], 
+        '3_400' =>['question' => "myquestion", 'answer' => 'myanswer'], 
+        '3_600' =>['question' => "myquestion", 'answer' => 'myanswer'], 
+        '3_800' =>['question' => "myquestion", 'answer' => 'myanswer'], 
+        //star wars
+        '4_200' =>['question' => 'myquestion', 'answer' => 'myanswer'], 
+        '4_400' =>['question' => 'myquestion', 'answer' => 'myanswer'], 
+        '4_600' =>['question' => "myquestion", 'answer' => 'myanswer'], 
+        '4_800' =>['question' => 'myquestion', 'answer' => 'myanswer'], 
+        //general knowledge
+        '5_200' =>['question' => 'myquestion', 'answer' => 'myanswer'], 
+        '5_400' =>['question' => 'myquestion', 'answer' => 'myanswer'], 
+        '5_600' =>['question' => 'myquestion', 'answer' => 'myanswer'], 
+        '5_800' =>['question' => 'myquestion', 'answer' => 'myanswer'], 
+    ];
+
+    $qua = $cat . '_' . $val; //this creates cat_val to find the entry in the questions array
+
+    $question = $questions[$qua]['question'];
+    $answer = $questions[$qua]['answer'];
+
+    return [$question, $answer]; //return the match
+}
 function checkAnswer($user, $correct){
     //this checks if the user answer is the correct answer
     if(trim(strtolower($user)) == $correct){

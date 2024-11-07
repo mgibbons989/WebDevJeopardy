@@ -9,7 +9,6 @@
 
 body, html{
     font-family: 'Aldrich', sans-serif;
-    padding: 0;
     margin: 0;
     height: 100%;
 }
@@ -87,6 +86,8 @@ input[type = "submit"]{
     margin-top: 6em;
     /* border: 2px solid blue; */
     height: 80%;
+
+    padding-bottom: 10px;
 }
 
 .cards{
@@ -107,7 +108,7 @@ input[type = "submit"]{
     color: black;
 }
 
-.logout{
+/* .logout{
     background-color: #7CCDFF;
     border-radius: 9px;
     font-size: 70%;
@@ -116,13 +117,13 @@ input[type = "submit"]{
     padding: 3pt;
     text-decoration: none;
     color: black;
-}
+} */
 
-.bot{
+/* .bot{
     margin-top: 3em;
     text-align: center;
     padding-bottom: 30px;
-}
+} */
 
 
 .instructions{

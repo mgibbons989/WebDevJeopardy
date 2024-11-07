@@ -1,11 +1,18 @@
 <?php 
 session_start();
+
+if(!isset($_SESSION['loggedin']) || ($_SESSION['loggedin']) != true){
+    $passplease = "<div class = 'mymess'>This is a password protected page. Please <a href = 'loginPage.php'>Login</a> or 
+    <a href = 'registrationPage.php'>Register</a> first.</div>";
+}
+
+
 //check the session to see if user logged in
 include 'myfunctions.php';
 //this calls a function from another php page and 
 //gets a question from the array based on the category and value
 //that was received from the previous page
-$qanda = getQA($_GET['cat'], $_GET['val']);
+$qanda = getQAdisney($_GET['cat'], $_GET['val']);
 
 if(alreadyanswered($_SESSION, $qanda)){
     $msg = "<div>You've already answered this question! Click a different one!</div>";
@@ -22,6 +29,10 @@ if(alreadyanswered($_SESSION, $qanda)){
     <link rel = "stylesheet" href = "game.css">
 </head>
 <body>
+    <div class = "passwordplease">
+        <?php if(isset($passplease)){echo $passplease; session_destroy(); exit();}?>
+    </div>
+
     <div class = "everything">
          <!-- The next two divs are separate for styling purposes -->
         <div class = "message">

@@ -1,5 +1,11 @@
 <?php 
 session_start();
+
+if(!isset($_SESSION['loggedin']) || ($_SESSION['loggedin']) != true){
+    $passplease = "<div class = 'mymess'>This is a password protected page. Please <a href = 'loginPage.php'>Login</a> or 
+    <a href = 'registrationPage.php'>Register</a> first.</div>";
+}
+
 include 'myfunctions.php';
 
 // $youwon = $_GET['won'];
@@ -23,6 +29,11 @@ else{
     <link rel = "stylesheet" href = "game.css">
 </head>
 <body>
+
+    <div class = "passwordplease">
+        <?php if(isset($passplease)){echo $passplease; session_destroy(); exit();}?>
+    </div>
+
     <div class = "everything">
 
     <div class = "message">

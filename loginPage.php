@@ -1,5 +1,9 @@
 <?php include 'myfunctions.php';
 //check the session to see if user logged in
+if(isset($_SESSION['loggedin']) && ($_SESSION['loggedin']) == true){
+    header("location:homePage.php");
+}
+
 
 if(isset($_POST['loginBut'])){
     $users = file('usernames.txt');
@@ -18,9 +22,9 @@ if(isset($_POST['loginBut'])){
         $failed = "<span style='color:red'>Username Not Found. Please Register First!</span>";
     }
     else if($password == trim($allinfo[3])){
-        echo "madeit";
         session_start();
-        $_SESSION['userdata']['Username'] = $username;
+        $_SESSION['username'] = $username;
+        $_SESSION['loggedin'] = true;
         header("location:homePage.php");
         exit();
     }

@@ -1,5 +1,9 @@
 <?php include 'myfunctions.php';
 
+if(isset($_SESSION['loggedin']) && ($_SESSION['loggedin']) == true){
+    header("location:homePage.php");
+}
+
 if(isset($_POST['registerBut'])){
     $valid = false;
 
@@ -33,7 +37,8 @@ if(isset($_POST['registerBut'])){
         
         file_put_contents('usernames.txt', $contents, FILE_APPEND | LOCK_EX);
         session_start();
-        $_SESSION['userdata']['Username'] = $_POST['uname'];
+        $_SESSION['username'] = $_POST['uname'];
+        $_SESSION['loggedin'] = true;
         header("location:homePage.php");
     }
 }

@@ -2,6 +2,11 @@
 //check the session to see if user logged in
 session_start();
 
+if(!isset($_SESSION['loggedin']) || ($_SESSION['loggedin']) != true){
+    $passplease = "<div class = 'mymess'>This is a password protected page. Please <a href = 'loginPage.php'>Login</a> or 
+    <a href = 'registrationPage.php'>Register</a> first.</div>";
+}
+
 unset($_SESSION['answered']);
 
 if(isset($_COOKIE['score'])){
@@ -27,6 +32,11 @@ if(isset($_POST['logoutBut'])){
     <link rel = "stylesheet" href = "mundane.css">
 </head>
 <body>
+    
+    <div class = "passwordplease">
+        <?php if(isset($passplease)){echo $passplease; session_destroy(); exit();}?>
+    </div>
+
     <div class = "top">
         HOME
     </div>
@@ -49,13 +59,14 @@ if(isset($_POST['logoutBut'])){
             <p>If you got it right you'll get the amount you clicked added to your score! If not, you won't
                 and you can go back to the categories pages to click another value!
             </p>
+            <p>Once you answer all the questions, we'll check your score to see if you win and let you know!</p>
         </div>
 
     </div>
     
     <div class = "center">
         <div class = "welcome">
-            <p>Welcome to Web Jeopardy <?= $_SESSION['userdata']['Username']?>!</p>
+            <p>Welcome to Web Jeopardy <?= $_SESSION['username']?>!</p>
             <p>Please select a topic below:</p>
         </div>
 

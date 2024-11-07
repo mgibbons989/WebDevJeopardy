@@ -1,6 +1,12 @@
 <?php 
-//check the session to see if user logged in
 session_start();
+
+//check the session to see if user logged in
+if(!isset($_SESSION['loggedin']) || ($_SESSION['loggedin']) != true){
+    $passplease = "<div class = 'mymess'>This is a password protected page. Please <a href = 'loginPage.php'>Login</a> or 
+    <a href = 'registrationPage.php'>Register</a> first.</div>";
+}
+
 //if the user has already played a bit, the score doesn't change
 //if they are new to the game, the score is set to 0 and the cookie is set to 
 //keep track across pages
@@ -34,6 +40,10 @@ if(isset($_SESSION['answered'])){
     <link rel = "stylesheet" href = "disney.css"> 
 </head>
 <body>
+    <div class = "passwordplease">
+            <?php if(isset($passplease)){echo $passplease; session_destroy(); exit();}?>
+    </div>
+
     <div class = "topics">
         <a href = "homePage.php">BACK TO TOPICS<br>(Resets your score)</a>
     </div>
