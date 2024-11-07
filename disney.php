@@ -37,7 +37,7 @@ if(isset($_SESSION['answered'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Disney</title>
-    <link rel = "stylesheet" href = "disney.css"> 
+    <link rel = "stylesheet" href = "gameboard.css"> 
 </head>
 <body>
     <div class = "passwordplease">
@@ -57,29 +57,29 @@ if(isset($_SESSION['answered'])){
         <!-- Each of these is a link sent to the question.php page with a different
          category and value according to which row and column the user clicks on -->
          
-        <div class = "money"><a href = "question.php?cat=1&val=200">$200</a></div>
-        <div class = "money"><a href = "question.php?cat=2&val=200">$200</a></div>
-        <div class = "money"><a href = "question.php?cat=3&val=200">$200</a></div>
-        <div class = "money"><a href = "question.php?cat=4&val=200">$200</a></div>
-        <div class = "money"><a href = "question.php?cat=5&val=200">$200</a></div>
+        <div class = "money"><a href = "question.php?topic=disney&cat=1&val=200">$200</a></div>
+        <div class = "money"><a href = "question.php?topic=disney&cat=2&val=200">$200</a></div>
+        <div class = "money"><a href = "question.php?topic=disney&cat=3&val=200">$200</a></div>
+        <div class = "money"><a href = "question.php?topic=disney&cat=4&val=200">$200</a></div>
+        <div class = "money"><a href = "question.php?topic=disney&cat=5&val=200">$200</a></div>
 
-        <div class = "money"><a href = "question.php?cat=1&val=400">$400</a></div>
-        <div class = "money"><a href = "question.php?cat=2&val=400">$400</a></div>
-        <div class = "money"><a href = "question.php?cat=3&val=400">$400</a></div>
-        <div class = "money"><a href = "question.php?cat=4&val=400">$400</a></div>
-        <div class = "money"><a href = "question.php?cat=5&val=400">$400</a></div>
+        <div class = "money"><a href = "question.php?topic=disney&cat=1&val=400">$400</a></div>
+        <div class = "money"><a href = "question.php?topic=disney&cat=2&val=400">$400</a></div>
+        <div class = "money"><a href = "question.php?topic=disney&cat=3&val=400">$400</a></div>
+        <div class = "money"><a href = "question.php?topic=disney&cat=4&val=400">$400</a></div>
+        <div class = "money"><a href = "question.php?topic=disney&cat=5&val=400">$400</a></div>
         
-        <div class = "money"><a href = "question.php?cat=1&val=600">$600</a></div>
-        <div class = "money"><a href = "question.php?cat=2&val=600">$600</a></div>
-        <div class = "money"><a href = "question.php?cat=3&val=600">$600</a></div>
-        <div class = "money"><a href = "question.php?cat=4&val=600">$600</a></div>
-        <div class = "money"><a href = "question.php?cat=5&val=600">$600</a></div>
+        <div class = "money"><a href = "question.php?topic=disney&cat=1&val=600">$600</a></div>
+        <div class = "money"><a href = "question.php?topic=disney&cat=2&val=600">$600</a></div>
+        <div class = "money"><a href = "question.php?topic=disney&cat=3&val=600">$600</a></div>
+        <div class = "money"><a href = "question.php?topic=disney&cat=4&val=600">$600</a></div>
+        <div class = "money"><a href = "question.php?topic=disney&cat=5&val=600">$600</a></div>
 
-        <div class = "money"><a href = "question.php?cat=1&val=800">$800</a></div>
-        <div class = "money"><a href = "question.php?cat=2&val=800">$800</a></div>
-        <div class = "money"><a href = "question.php?cat=3&val=800">$800</a></div>
-        <div class = "money"><a href = "question.php?cat=4&val=800">$800</a></div>
-        <div class = "money"><a href = "question.php?cat=5&val=800">$800</a></div>
+        <div class = "money"><a href = "question.php?topic=disney&cat=1&val=800">$800</a></div>
+        <div class = "money"><a href = "question.php?topic=disney&cat=2&val=800">$800</a></div>
+        <div class = "money"><a href = "question.php?topic=disney&cat=3&val=800">$800</a></div>
+        <div class = "money"><a href = "question.php?topic=disney&cat=4&val=800">$800</a></div>
+        <div class = "money"><a href = "question.php?topic=disney&cat=5&val=800">$800</a></div>
         
     </div>
 </body>

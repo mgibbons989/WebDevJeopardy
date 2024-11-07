@@ -8,8 +8,8 @@ if(!isset($_SESSION['loggedin']) || ($_SESSION['loggedin']) != true){
 
 include 'myfunctions.php';
 
-// $youwon = $_GET['won'];
-$youwon = 'no';
+$youwon = $_GET['won'];
+
 if($youwon == 'yes'){
     $reward = "Congratulations! You answered all the questions and got enought points! 
     You Win! Here's your prize: 🍪";

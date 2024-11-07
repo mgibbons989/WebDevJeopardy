@@ -38,7 +38,7 @@ function getQAdisney($cat,$val){
 
     return [$question, $answer]; //return the match
 }
-function getQA($cat,$val){
+function getQAcoding($cat,$val){
     $questions = [
         //marvel movies
         '1_200' =>['question' => 'myquestion', 'answer' => 'myanswer'],
@@ -75,7 +75,7 @@ function getQA($cat,$val){
     return [$question, $answer]; //return the match
 }
 
-function getQA1($cat,$val){
+function getQAushist($cat,$val){
     $questions = [
         //marvel movies
         '1_200' =>['question' => 'myquestion', 'answer' => 'myanswer'],

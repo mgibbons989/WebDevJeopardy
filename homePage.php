@@ -76,11 +76,11 @@ if(isset($_POST['logoutBut'])){
             </div>
 
             <div class = "topic">
-                <a href = ""><span class = "words">Topic 2</span></a>
+                <a href = "coding.php"><span class = "words">Coding<br>(HTML, CSS and Python)</span></a>
             </div>
 
             <div class = "topic">
-                <a href = ""><span class = "words">Topic 3</span></a>
+                <a href = "ushist.php"><span class = "words">U.S. History</span></a>
             </div>
         </div>
 

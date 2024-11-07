@@ -6,17 +6,26 @@ if(!isset($_SESSION['loggedin']) || ($_SESSION['loggedin']) != true){
     <a href = 'registrationPage.php'>Register</a> first.</div>";
 }
 
+else{
+    //check the session to see if user logged in
+    include 'myfunctions.php';
+    //this calls a function from another php page and 
+    //gets a question from the array based on the category and value
+    //that was received from the previous page
+    if($_GET['topic'] == 'disney'){
+        $qanda = getQAdisney($_GET['cat'], $_GET['val']);
+    }
+    else if($_GET['topic'] == 'coding'){
+        $qanda = getQAcoding($_GET['cat'], $_GET['val']);
+    }
+    else if($_GET['topic'] == 'ushist'){
+        $qanda = getQAushist($_GET['cat'], $_GET['val']);
+    }
 
-//check the session to see if user logged in
-include 'myfunctions.php';
-//this calls a function from another php page and 
-//gets a question from the array based on the category and value
-//that was received from the previous page
-$qanda = getQAdisney($_GET['cat'], $_GET['val']);
-
-if(alreadyanswered($_SESSION, $qanda)){
-    $msg = "<div>You've already answered this question! Click a different one!</div>";
-    $back = "<div class = 'back'><a href = 'disney.php'> BACK TO TOPIC BOARD </a></div>";
+    if(alreadyanswered($_SESSION, $qanda)){
+        $msg = "<div>You've already answered this question! Click a different one!</div>";
+        $back = "<div class = 'back'><a href = '" . $_GET['topic'] . ".php '> BACK TO TOPIC BOARD </a></div>";
+    }
 }
 ?>
 
