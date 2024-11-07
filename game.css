@@ -26,12 +26,26 @@ body,html{
     align-items: center;
     font-size: 4em;
     text-shadow: 4px 5px 2px black;
+    margin: auto;
+    width: 70%;
 
     display: flex;
     text-align: center;
     /* border: 2px solid red; */
     margin-top: 2em;
+}
+.message{
+    margin: auto;
+    width: 70%;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    font-size: 4em;
+    text-shadow: 4px 5px 2px black;
 
+    display: flex;
+    text-align: center;
+    /* border: 2px solid red; */
 }
 .response{
     flex: 1;
@@ -109,6 +123,7 @@ input[type = "submit"]:hover{
 
 .back{
     padding-bottom: 15px;
+    display: block;
 }
 
 .back a{
@@ -123,4 +138,11 @@ input[type = "submit"]:hover{
 .back a:hover{
     text-shadow: none;
     text-decoration: underline;
+}
+
+.topics{
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
 }

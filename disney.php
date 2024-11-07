@@ -11,6 +11,18 @@ if(!isset($_COOKIE['score'])){
 else{
     $score = $_COOKIE['score'];
 }
+if(isset($_SESSION['answered'])){
+    if(count($_SESSION['answered']) == 25)
+    {
+        if($score < 7000){
+            header("location: end.php?won=no");
+        }
+        else{
+            header("location: end.php?won=yes");
+        }
+        exit();
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -22,6 +34,9 @@ else{
     <link rel = "stylesheet" href = "disney.css"> 
 </head>
 <body>
+    <div class = "topics">
+        <a href = "homePage.php">BACK TO TOPICS<br>(Resets your score)</a>
+    </div>
     <div class = "mygrid">
         <div class = "category">MARVEL MOVIES</div>
         <div class = "category">ANIMATED FILMS</div>

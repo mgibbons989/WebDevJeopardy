@@ -2,6 +2,7 @@
 //check the session to see if user logged in
 session_start();
 include 'myfunctions.php';
+$score = isset($_COOKIE['score']) ? $_COOKIE['score'] : 0; //set score and if it hasnt been set then its 0
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +18,6 @@ include 'myfunctions.php';
         <div class = "response">
             <?php 
             if(checkAnswer($_POST['useranswer'], $_POST['correctanswer'])){
-                $score = $_COOKIE['score']; //set score
                 $score +=  $_POST['val']; //update score
                 setcookie('score', $score, time() + 3600 * 24); //update cookie
                 echo 'CORRECT! THE ANSWER WAS: <br>' . htmlspecialchars(ucwords($_POST['correctanswer'])) . "<br>LET'S KEEP IT GOING!"; //print correct message
@@ -25,6 +25,7 @@ include 'myfunctions.php';
             else{
                 echo 'SORRY! THE ANSWER WAS: <br>' . htmlspecialchars(ucwords($_POST['correctanswer'])) . "<br> NO MONEY FOR YOU!"; //print incorrect message
             }
+            $_SESSION['answered'][htmlspecialchars($_POST['ques'])] = true;
             ?>
         </div>
 

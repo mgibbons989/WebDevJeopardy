@@ -81,4 +81,21 @@ function alreadyin($post){
     }
     return true;
 }
+
+function alreadyanswered($session, $qanda){
+    if(isset($session['answered'][htmlspecialchars($qanda[0])])){
+        return true;
+    }
+    return false;
+}
+
+function myscore(){
+    echo "<div class = 'score'>
+
+            <div class = 'sc'>Your Score</div>
+            <div class = 'scnum'>$ " . isset($_COOKIE['score']) ? $_COOKIE['score'] : 0 . "</div>
+            <!-- Displays the score if its set and if not, then it displays zero -->
+
+        </div>";
+}
 ?>

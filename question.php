@@ -6,6 +6,11 @@ include 'myfunctions.php';
 //gets a question from the array based on the category and value
 //that was received from the previous page
 $qanda = getQA($_GET['cat'], $_GET['val']);
+
+if(alreadyanswered($_SESSION, $qanda)){
+    $msg = "<div>You've already answered this question! Click a different one!</div>";
+    $back = "<div class = 'back'><a href = 'disney.php'> BACK TO TOPIC BOARD </a></div>";
+}
 ?>
 
 <!DOCTYPE html>
@@ -18,7 +23,20 @@ $qanda = getQA($_GET['cat'], $_GET['val']);
 </head>
 <body>
     <div class = "everything">
+         <!-- The next two divs are separate for styling purposes -->
+        <div class = "message">
+            <?php if(isset($msg)){
+                echo $msg;
+            } ?>
+        </div>
 
+        <div>
+        <?php if(isset($back)){
+                echo $back;
+                exit();
+            } ?>
+        </div>
+        
         <div class = "quest">
             <?=$qanda[0]; ?> 
             <!--since the qnada can only have two array entries, 
@@ -31,6 +49,7 @@ $qanda = getQA($_GET['cat'], $_GET['val']);
 
                 <label for = "myques">
                     Type your answer below:<br>
+                    <input type = "hidden" name ="ques" value = "<?=htmlspecialchars($qanda[0])?>">
                     <input type = "text" name = "useranswer" id = "myques">
                      <!--This is the text box for the user to type their answer-->
                     <input type = "hidden" name = "correctanswer" value = "<?= htmlspecialchars($qanda[1]);?>">

@@ -1,9 +1,15 @@
 <?php include 'myfunctions.php';
 //check the session to see if user logged in
 session_start();
+
+unset($_SESSION['answered']);
+
 if(isset($_COOKIE['score'])){
+    setcookie('score', 0, time() + 3600 * 24);
     $_COOKIE['score'] = 0;
+
 }
+
 if(isset($_POST['logoutBut'])){
     session_unset();
     session_destroy();
