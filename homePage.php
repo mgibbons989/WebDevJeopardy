@@ -54,10 +54,10 @@ if(isset($_POST['logoutBut'])){
             </p>
             <p>Afterwards, you'll be taken to a page with a grid of categories and your choice of money value :).
                 Once you click on a value, it'll take you to a question page where you'll type in your answer and
-                press submit. The questions vary with simple question and answers, fill in the blanks, and true or false.
+                press submit. The type of question vares with QnA, fill in the blank, or true or false.
             </p>
-            <p>If you got it right you'll get the amount you clicked added to your score! If not, you won't
-                and you can go back to the categories pages to click another value!
+            <p>If you get it right, the amount you clicked is added to your score! If not, you won't
+                and you can go back to the gameboard to click another value!
             </p>
             <p>Once you answer all the questions, we'll check your score to see if you win and let you know!</p>
         </div>
@@ -76,7 +76,7 @@ if(isset($_POST['logoutBut'])){
             </div>
 
             <div class = "topic">
-                <a href = "coding.php"><span class = "words">Coding<br>(HTML, CSS and Python)</span></a>
+                <a href = "coding.php"><span class = "words">Coding</span></a>
             </div>
 
             <div class = "topic">
@@ -84,9 +84,11 @@ if(isset($_POST['logoutBut'])){
             </div>
         </div>
 
-        <form action = "logOutPage.php" method = 'post'>
-            <br><br><input type = "submit" name = "logoutBut" value = "Log Out">
-        </form>
+        <div>
+            <form action = "logOutPage.php" method = 'post'>
+                <br><br><input type = "submit" name = "logoutBut" value = "Log Out">
+            </form>
+        </div>
 
     </div>
 

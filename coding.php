@@ -48,11 +48,11 @@ if(isset($_SESSION['answered'])){
         <a href = "homePage.php">BACK TO TOPICS<br>(Resets your score)</a>
     </div>
     <div class = "mygrid">
-        <div class = "category">CAT</div>
-        <div class = "category">CAT</div>
-        <div class = "category">CAT</div>
-        <div class = "category">CAT</div>
-        <div class = "category">CAT</div>
+        <div class = "category">FUNDAMENTALS</div>
+        <div class = "category">PYTHON</div>
+        <div class = "category">HTML</div>
+        <div class = "category">CSS</div>
+        <div class = "category">DATA STRUCTURES</div>
 
         <!-- Each of these is a link sent to the question.php page with a different
          category and value according to which row and column the user clicks on -->
