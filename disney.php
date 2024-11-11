@@ -17,8 +17,11 @@ if(!isset($_COOKIE['score'])){
 else{
     $score = $_COOKIE['score'];
 }
+
+//if the user has answered all of the questions, we direct them to a different page 
+//which tells them if they win or lose
 if(isset($_SESSION['answered'])){
-    if(count($_SESSION['answered']) == 25)
+    if(count($_SESSION['answered']) >= 20)
     {
         if($score < 7000){
             header("location: end.php?won=no");
@@ -45,7 +48,7 @@ if(isset($_SESSION['answered'])){
     </div>
 
     <div class = "topics">
-        <a href = "homePage.php">BACK TO TOPICS<br>(Resets your score)</a>
+        <a href = "homePage.php">BACK TO TOPICS(Resets your score)</a>
     </div>
     <div class = "mygrid">
         <div class = "category">MARVEL MOVIES</div>
@@ -54,9 +57,25 @@ if(isset($_SESSION['answered'])){
         <div class = "category">STAR WARS</div>
         <div class = "category">GENERAL<br> KNOWLEDGE</div>
 
+
+        <?php 
+
+        //this loop prints out each question, like below
+        //it looks better visually
+         $values = [200, 400, 600, 800];
+         $ind = 0;
+            for ($i = 0; $i < 4; $i++) {
+                for($j = 1; $j <= 5; $j++) {
+                    echo "<div class='money'><a href='question.php?topic=disney&cat=$j&val=$values[$ind]'>$$values[$ind]</a></div>";
+                }
+            $ind++;
+            }
+        ?>
+
+        <!--I left this hear to demonstrate what it's doing and because it was my initial idea-->
         <!-- Each of these is a link sent to the question.php page with a different
          category and value according to which row and column the user clicks on -->
-         
+<!--          
         <div class = "money"><a href = "question.php?topic=disney&cat=1&val=200">$200</a></div>
         <div class = "money"><a href = "question.php?topic=disney&cat=2&val=200">$200</a></div>
         <div class = "money"><a href = "question.php?topic=disney&cat=3&val=200">$200</a></div>
@@ -79,7 +98,7 @@ if(isset($_SESSION['answered'])){
         <div class = "money"><a href = "question.php?topic=disney&cat=2&val=800">$800</a></div>
         <div class = "money"><a href = "question.php?topic=disney&cat=3&val=800">$800</a></div>
         <div class = "money"><a href = "question.php?topic=disney&cat=4&val=800">$800</a></div>
-        <div class = "money"><a href = "question.php?topic=disney&cat=5&val=800">$800</a></div>
+        <div class = "money"><a href = "question.php?topic=disney&cat=5&val=800">$800</a></div> -->
         
     </div>
 </body>

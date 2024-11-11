@@ -55,8 +55,8 @@ body,html{
 .topics{
     /* border: 2px solid pink; */
     position: absolute;
-    left:50%;
-    transform: translate(-50%);
+    left:10px;
+    /* transform: translate(-50%);  */
     text-align: center;
 
     color: white;

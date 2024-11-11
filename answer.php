@@ -6,6 +6,7 @@ if(!isset($_SESSION['loggedin']) || ($_SESSION['loggedin']) != true){
     $passplease = "<div class = 'mymess'>This is a password protected page. Please <a href = 'loginPage.php'>Login</a> or 
     <a href = 'registrationPage.php'>Register</a> first.</div>";
 }
+//if user hasnt logged in, we ask them to, like the previous pages
 
 include 'myfunctions.php';
 $score = isset($_COOKIE['score']) ? $_COOKIE['score'] : 0; //set score and if it hasnt been set then its 0
@@ -39,8 +40,9 @@ $score = isset($_COOKIE['score']) ? $_COOKIE['score'] : 0; //set score and if it
             $_SESSION['answered'][htmlspecialchars($_POST['ques'])] = true;
             ?>
         </div>
-
-        <div class = "back"><a href = "disney.php"> BACK TO TOPIC BOARD </a></div>
+        
+        
+        <div class = "back"><a href = "<?=$_POST["topic"]?>.php"> BACK TO TOPIC BOARD </a></div>
         <!-- leads back to the game board -->
 
         <div class = "score">

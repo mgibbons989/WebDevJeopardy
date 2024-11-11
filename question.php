@@ -9,6 +9,7 @@ if(!isset($_SESSION['loggedin']) || ($_SESSION['loggedin']) != true){
 else{
     //check the session to see if user logged in
     include 'myfunctions.php';
+
     //this calls a function from another php page and 
     //gets a question from the array based on the category and value
     //that was received from the previous page
@@ -21,7 +22,7 @@ else{
     else if($_GET['topic'] == 'ushist'){
         $qanda = getQAushist($_GET['cat'], $_GET['val']);
     }
-
+    //if the user has already answered a question, we display these words instead of the question
     if(alreadyanswered($_SESSION, $qanda)){
         $msg = "<div>You've already answered this question! Click a different one!</div>";
         $back = "<div class = 'back'><a href = '" . $_GET['topic'] . ".php '> BACK TO TOPIC BOARD </a></div>";
@@ -39,11 +40,13 @@ else{
 </head>
 <body>
     <div class = "passwordplease">
-        <?php if(isset($passplease)){echo $passplease; session_destroy(); exit();}?>
+        <?php if(isset($passplease)){echo $passplease; session_destroy(); exit();}?> <!--This is where we pirnt out our password page-->
     </div>
 
     <div class = "everything">
-         <!-- The next two divs are separate for styling purposes -->
+         <!-- The next two divs are separate for styling purposes 
+          
+         This is where our already answered displays-->
         <div class = "message">
             <?php if(isset($msg)){
                 echo $msg;
@@ -70,7 +73,8 @@ else{
                 <label for = "myques">
                     Type your answer below:<br>
                     <input type = "hidden" name ="ques" value = "<?=htmlspecialchars($qanda[0])?>">
-                    <input type = "text" name = "useranswer" id = "myques">
+                    <input type = "hidden" name = "topic" value = "<?=htmlspecialchars($_GET["topic"]);?>">
+                    <input type = "text" name = "useranswer" id = "myques" required>
                      <!--This is the text box for the user to type their answer-->
                     <input type = "hidden" name = "correctanswer" value = "<?= htmlspecialchars($qanda[1]);?>">
                     <!-- This is a hidden input to keep the correctanswer with us across pages -->

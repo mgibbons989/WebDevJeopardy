@@ -1,4 +1,5 @@
-<?php include 'myfunctions.php';
+<?php session_start();
+include 'myfunctions.php';
 
 if(isset($_SESSION['loggedin']) && ($_SESSION['loggedin']) == true){
     header("location:homePage.php");
@@ -6,14 +7,14 @@ if(isset($_SESSION['loggedin']) && ($_SESSION['loggedin']) == true){
 
 if(isset($_POST['registerBut'])){
     $valid = false;
-
-    if(validate($_POST) == 'empty'){
+    
+    if(validate($_POST) === 'empty'){
         $msg = "<span style='color:red'>Please fill out required sections(marked with a *) properly!</span>";
     }
-    else if(validate($_POST) == 'number'){
+    else if(validate($_POST) === 'number'){
         $msg = "<span style='color:red'>Please enter your number properly or leave it blank!</span>";
     }
-    else if(validate($_POST) == 'email'){
+    else if(validate($_POST) === 'email'){
         $msg = "<span style='color:red'>Please enter your email properly or leave it blank!</span>";
     }
     else if(!alreadyin($_POST)){
@@ -36,7 +37,7 @@ if(isset($_POST['registerBut'])){
         }
         
         file_put_contents('usernames.txt', $contents, FILE_APPEND | LOCK_EX);
-        session_start();
+        
         $_SESSION['username'] = $_POST['uname'];
         $_SESSION['loggedin'] = true;
         header("location:homePage.php");
@@ -65,7 +66,7 @@ if(isset($_POST['registerBut'])){
 
         <form action = "" method="post">
             <div class = "info">
-                <div><?php if(isset($msg)){echo $msg; $msg = null;}?></div>
+                <div><?php if(isset($msg)){echo $msg;$msg = null;}?></div>
 
                 <label for = "first"> First Name <span class = "red">*</span>
                 <input type = "text" id = "first" name = "fname"></label><br><br>

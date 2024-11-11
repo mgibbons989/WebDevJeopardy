@@ -7,9 +7,9 @@ if(!isset($_SESSION['loggedin']) || ($_SESSION['loggedin']) != true){
 }
 
 include 'myfunctions.php';
-
+//gets whether the user won
 $youwon = $_GET['won'];
-
+//this if an if else statement to get the message we want to display based on the previous variable
 if($youwon == 'yes'){
     $reward = "Congratulations! You answered all the questions and got enought points! 
     You Win! Here's your prize: 🍪";
@@ -31,16 +31,16 @@ else{
 <body>
 
     <div class = "passwordplease">
-        <?php if(isset($passplease)){echo $passplease; session_destroy(); exit();}?>
+        <?php if(isset($passplease)){echo $passplease; session_destroy(); exit();} //this is also a password protected page?> 
     </div>
 
     <div class = "everything">
 
     <div class = "message">
-        <?=$reward;?>
+        <?=$reward; //displays message?>
     </div>
 
-    <div class = "back"><a href = "homePage.php"> BACK TO TOPICS </a></div>
+    <div class = "back"><a href = "homePage.php"> BACK TO HOMEPAGE </a></div>
 
     <div class = "score">
 

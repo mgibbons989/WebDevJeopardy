@@ -1,19 +1,20 @@
-<?php include 'myfunctions.php';
+<?php session_start();
+include 'myfunctions.php';
 //check the session to see if user logged in
-session_start();
 
+//if the user isnt logged in, we display a message and ask them to 
 if(!isset($_SESSION['loggedin']) || ($_SESSION['loggedin']) != true){
     $passplease = "<div class = 'mymess'>This is a password protected page. Please <a href = 'loginPage.php'>Login</a> or 
     <a href = 'registrationPage.php'>Register</a> first.</div>";
 }
 
-unset($_SESSION['answered']);
+unset($_SESSION['answered']); //if user has played before, we reset the array that keeps track of the answered questions
 
 if(isset($_COOKIE['score'])){
     setcookie('score', 0, time() + 3600 * 24);
     $_COOKIE['score'] = 0;
-
 }
+//if the user played before, we reset the score cookie
 
 if(isset($_POST['logoutBut'])){
     session_unset();
@@ -21,6 +22,7 @@ if(isset($_POST['logoutBut'])){
     header("location:loginPage.php");
     exit();
 }
+//if the user clicks log out, we reset everything and go back to the log in page
 ?>
 
 <!DOCTYPE html>
@@ -34,7 +36,7 @@ if(isset($_POST['logoutBut'])){
 <body>
     
     <div class = "passwordplease">
-        <?php if(isset($passplease)){echo $passplease; session_destroy(); exit();}?>
+        <?php if(isset($passplease)){echo $passplease; session_destroy(); exit();} // this displays the password page and stops everything else from printing?>
     </div>
 
     <div class = "top">
@@ -66,7 +68,7 @@ if(isset($_POST['logoutBut'])){
     
     <div class = "center">
         <div class = "welcome">
-            <p>Welcome to Web Jeopardy <?= $_SESSION['username']?>!</p>
+            <p>Welcome to Web Jeopardy <?= $_SESSION['username'] //we stored the user name from the log in page?>!</p>
             <p>Please select a topic below:</p>
         </div>
 
@@ -85,7 +87,7 @@ if(isset($_POST['logoutBut'])){
         </div>
 
         <div>
-            <form action = "logOutPage.php" method = 'post'>
+            <form action = "" method = 'post'>
                 <br><br><input type = "submit" name = "logoutBut" value = "Log Out">
             </form>
         </div>
