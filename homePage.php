@@ -50,18 +50,23 @@ if(isset($_POST['logoutBut'])){
                 <span class = "dir">How to Play</span>
                 <label><input type = "checkbox"><span class = "closebut"> &times; </span></label>
             </div>
-            <p>Welcome to our Jeopardy Game!</p>
-            <p>This is an online version of classic Jeopardy! To begin,
-                please choose a topic after closing this window.
-            </p>
-            <p>Afterwards, you'll be taken to a page with a grid of categories and your choice of money value :).
-                Once you click on a value, it'll take you to a question page where you'll type in your answer and
-                press submit. The type of question vares with QnA, fill in the blank, or true or false.
-            </p>
-            <p>If you get it right, the amount you clicked is added to your score! If not, you won't
-                and you can go back to the gameboard to click another value!
-            </p>
-            <p>Once you answer all the questions, we'll check your score to see if you win and let you know!</p>
+            
+            <div class = "directions">
+                <div>
+                    <p>Welcome to our Jeopardy Game!</p>
+                    <p>This is an online version of classic Jeopardy! To begin,
+                        please choose a topic after closing this window.
+                    </p>
+                    <p>Afterwards, you'll be taken to a page with a grid of categories and your choice of money value :).
+                        Once you click on a value, it'll take you to a question page where you'll type in your answer and
+                        press submit. The type of question vares with QnA, fill in the blank, or true or false.
+                    </p>
+                    <p>If you get it right, the amount you clicked is added to your score! If not, you won't
+                        and you can go back to the gameboard to click another value!
+                    </p>
+                    <p>Once you answer all the questions, we'll check your score to see if you win and let you know!</p>
+                </div>
+            </div>
         </div>
 
     </div>
